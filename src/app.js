@@ -3,7 +3,7 @@ var Valorant = require('./riot/valorant');
 var Twitter = require('./twitter/tweet');
 const CONFIG = require('../config');
 
-var App = function () {
+exports.handler = (event, context, callback) => {
     var valorant = new Valorant(CONFIG);
     var twitter = new Twitter(CONFIG);
     
@@ -12,4 +12,4 @@ var App = function () {
             twitter.tweet(data);
         });
     });
-}();
+};
